@@ -1,7 +1,7 @@
 /***
 |''Name''|GEDCOMImporterPlugin|
 |''Description''|Imports gedcom files into tiddlywiki|
-|''Version''|0.2.0|
+|''Version''|0.2.1|
 |''Requires''|JRGgedcom.js|
 |''Author''|Jon Robson|
 |''License''|BSD|
@@ -14,11 +14,13 @@ var macro = config.macros.gedcomImport = {
 	},
 	handler: function(place) {
 		var container = $("<div />").appendTo(place)[0];
-		$("<div />").text(macro.locale.describe).appendTo(container);
-		$("<form />").appendTo(container);
+		$("<div/>").text(macro.locale.describe).appendTo(container);
 		$("<textarea />").appendTo(container);
 		$("<button />").appendTo(container).text("import gedcom").click(function(ev) {
-			var tiddlers = gedcom.import($("textarea", container).val());
+			var text = $("textarea", container).val();
+			$("textarea", container).val("");
+			var tiddlers = gedcom.import(text);
+			$(ev.target).attr("disabled", true);
 			var save = [];
 			for(var i = 0; i < tiddlers.length; i++) {
 				var tid = tiddlers[i];
@@ -36,6 +38,7 @@ var macro = config.macros.gedcomImport = {
 			}
 			autoSaveChanges(null, save)
 			refreshAll();
+			$(ev.target).attr("disabled", false);
 		})
 	}
 };
