@@ -3,6 +3,7 @@
 |''Description''|Turns a text file GEDCOM into traversable XML.|
 |''Version''|0.2.0|
 |''Author''|Jon Robson|
+|''Source''|https://github.com/jdlrobson/JRgedcom|
 |''License''|BSD|
 !Notes
 Note this implementation is incomplete and may not import all data from a GEDCOM file. It however should import the basic structure of a family tree.
