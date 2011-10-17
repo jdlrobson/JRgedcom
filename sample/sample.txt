@@ -1,0 +1,15 @@
+0 @I1@ INDI
+1 NAME John /Doe/
+1 BIRT
+2 DATE 10 JAN 1800
+2 SOUR @S1@
+3 DATA
+4 TEXT Transcription from birth certificate would go here
+3 NOTE This birth record is preferred because it comes from the birth certificate
+3 QUAY 2
+1 BIRT
+2 DATE 11 JAN 1800
+2 SOUR @S2@
+3 DATA
+4 TEXT Transcription from death certificate would go here
+3 QUAY 2

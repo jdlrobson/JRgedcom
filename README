@@ -1,0 +1,5 @@
+Parses the GEDCOM format into a JSON file where each person is modelled like so
+{ title: "John Smith (@@GEDCOMID@@)", fields: {
+		father: "<Title of Father>", mother: "<Title of Mother>" }}
+
+Also see toXML function to convert a gedcom (text) to dom element tree.
